@@ -22,7 +22,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
+
 
             <form action="/admin/posts" method="POST" role="form">
                 {{ csrf_field() }}
@@ -44,7 +44,7 @@
                 <div class="text-right">
                     <button type="submit" class="btn btn-success">新增</button>
                 </div>
-            </form>
+
 
             <p>&nbsp;</p>
             <p>&nbsp;</p>

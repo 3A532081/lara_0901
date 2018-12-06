@@ -39,7 +39,7 @@ class AdminPostsController extends Controller
     public function update(PostRequest $request,$id)//前一次新增store時提前先做了。
     {
         $post = Post::find($id);
-        $post ->update($request->all());
+        $post->update($request->all());
         return redirect()->route('admin.posts.index');
     }
 
