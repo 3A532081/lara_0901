@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Http\Requests\PostRequest;
 
 use App\Post;
+
 
 class AdminPostsController extends Controller
 {
@@ -29,13 +30,13 @@ class AdminPostsController extends Controller
         return view('admin.posts.edit', $data);
     }
 
-    public function store(PostRequest $request)
+    public function store(PostRequest $request)//前一次新增store時提前先做了。
     {
         Post::create($request->all());//前一次新增store時提前先做了。
         return redirect()->route('admin.posts.index');//前一次新增store時提前先做了。
     }
 
-    public function update(PostRequest $request,$id)
+    public function update(PostRequest $request,$id)//前一次新增store時提前先做了。
     {
         $post = Post::find($id);
         $post ->update($request->all());
