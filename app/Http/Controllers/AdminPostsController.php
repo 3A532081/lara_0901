@@ -28,4 +28,10 @@ class AdminPostsController extends Controller
 
         return view('admin.posts.edit', $data);
     }
+
+    public function store(PostRequest $request)
+    {
+        Post::create($request->all());
+        return redirect()->route('admin.posts.index');
+    }
 }
