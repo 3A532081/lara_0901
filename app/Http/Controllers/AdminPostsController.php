@@ -13,7 +13,7 @@ class AdminPostsController extends Controller
     public function index()
     {
        $posts = Post::orderBy('created_at','DESC')->get();
-       $data = ['posts' =>'$posts'];
+       $data = ['posts' =>$posts];
         return view('admin.posts.index',$data);
     }
 
@@ -35,7 +35,7 @@ class AdminPostsController extends Controller
         return redirect()->route('admin.posts.index');//前一次新增store時提前先做了。
     }
 
-    public function update(Request $request,$id)
+    public function update(PostRequest $request,$id)
     {
         $post = Post::find($id);
         $post ->update($request->all());
